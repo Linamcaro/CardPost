@@ -38,11 +38,8 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.cardDataResponse.observe(this) {response->
             Log.d("CardInfoTrace", response.code().toString())
-            if(response.code() == 200){
-                Log.d("CardInfoTrace","Status = OK")
-                Toast.makeText(this, "Status = OK", Toast.LENGTH_SHORT).show()
-            }
 
+            response.body()?.let { Log.d("CardInfoTrace", it.status) }
 
         }
 
@@ -51,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun sendCardInfo(cardInfo: CardInfo) {
         Log.d("CardInfoTrace ","Main Activity:Send Card Info function called")
-
+        Log.d("CardInfoTrace ",cardInfo.toString())
         viewModel.sendCardInfo(cardInfo)
 
     }
