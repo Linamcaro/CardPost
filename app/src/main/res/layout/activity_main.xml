@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="cardInfo"
+            type="com.example.testcubepay.model.CardInfo" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/cardNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Card Number!"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.101"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cardNumberInputText"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
+            android:hint="card number"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/cardNumberTextView"
+            app:layout_constraintTop_toBottomOf="@+id/cardNumberTextView" />
+
+        <TextView
+            android:id="@+id/cardExpiration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Card Expiration"
+            app:layout_constraintEnd_toEndOf="@+id/cardNumberTextView"
+            app:layout_constraintStart_toStartOf="@+id/cardNumberTextView"
+            app:layout_constraintTop_toBottomOf="@+id/cardNumberInputText" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cardExpirationInputText"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:hint="card expiration date"
+            android:inputType="date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/cardExpiration"
+            app:layout_constraintTop_toBottomOf="@+id/cardExpiration" />
+
+        <TextView
+            android:id="@+id/cvvTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="CVV"
+            app:layout_constraintEnd_toEndOf="@+id/cardExpirationInputText"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/cardExpirationInputText"
+            app:layout_constraintTop_toBottomOf="@+id/cardExpirationInputText" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cvvInputText"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:hint="CVV"
+            android:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/cvvTextView"
+            app:layout_constraintTop_toBottomOf="@+id/cvvTextView" />
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Send"
+            app:layout_constraintEnd_toEndOf="@+id/cvvInputText"
+            app:layout_constraintStart_toStartOf="@+id/cvvInputText"
+            app:layout_constraintTop_toBottomOf="@+id/cvvInputText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
